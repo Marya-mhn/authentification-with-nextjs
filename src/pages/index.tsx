@@ -12,21 +12,22 @@ export default function Home() {
   console.log(session);
   return (
     <>
-      <h1 className="text-red-700 font-bold ">{session?.user?.name}</h1>
-      <img
-        src={session?.user?.image!}
-        alt=""
-        className="w-[128px] h-32 rounded-full"
-      />
-      {session ? (
-        <button onClick={() => signOut()} className="bg-blue-400">
-          Sign out
-        </button>
-      ) : (
-        <button onClick={() => signIn()} className="bg-blue-400">
-          Sign in
-        </button>
-      )}
+      <div className="h-screen w-screen flex items-center justify-center">
+        {session ? (
+          <div className=" flex flex-col gap-1 items-center  ">
+            <h2>{session?.user?.name}</h2>
+            <img
+              src={session?.user?.image!}
+              alt=""
+              className="w-32 h-32 rounded-full"
+            />
+            <h4>{session?.user?.email}</h4>
+            <button onClick={() => signOut()}>Sign out</button>
+          </div>
+        ) : (
+          <button onClick={() => signIn()}>Sign in</button>
+        )}
+      </div>
     </>
   );
 }
