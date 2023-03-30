@@ -11,6 +11,12 @@ export default function Home() {
   const { data: session } = useSession();
   return (
     <>
+      <head>
+        <meta
+          name="facebook-domain-verification"
+          content="dhukinh8yyuilb9vsc1ilindmnfm19"
+        />
+      </head>
       <div className="h-screen w-screen flex items-center justify-center">
         {session ? (
           <div className=" flex flex-col gap-1 items-center  ">
